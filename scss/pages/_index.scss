@@ -1,0 +1,70 @@
+img{
+    max-width: 100%;
+    height: auto;
+}
+.imgPosition{
+    bottom: 10px;
+    right: 50px;
+}
+.transportIcon{
+    width: 115px;
+    height: 115px;
+    font-size: 48px;
+}
+.productTag{
+    top: 13px;
+    right: 5px;
+}
+.carts{
+    font-size: 1.25rem;
+}
+.table td{
+    vertical-align: middle;
+    text-align: left;
+  }
+@media(max-width:768px){
+    .mdh6{
+      font-size: 1rem;
+    }
+    .p0{
+        padding: 0px;
+    }
+}
+@media(max-width:375px){
+   .cartImg{
+       width: 100%;
+       height: 100px;
+   }
+   .table{
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+   }
+   .imgPosition{
+    font-size: 20px;
+    bottom: -6px;
+    right: 50px;
+   }
+   .orderInfo-message{
+       padding-left: 0px !important;
+   }
+   .p0{
+    padding-left: 16px;
+}
+   .pl0{
+    padding-left: 0px;
+   }
+  
+}
+
+input:focus{
+    outline: none;
+}
+
+button:focus{
+    outline: none;
+}
+
+.wid{
+    width: 30px;
+}
