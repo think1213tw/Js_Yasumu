@@ -22,6 +22,21 @@ img{
     vertical-align: middle;
     text-align: left;
   }
+  .goTop {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    .goTopBtn {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      .fa-arrow-alt-circle-up {
+        color: $primary;
+      }
+    }
+  }
+
 @media(max-width:768px){
     .mdh6{
       font-size: 1rem;

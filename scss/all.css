@@ -10829,6 +10829,23 @@ img {
   text-align: left;
 }
 
+.goTop {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+}
+
+.goTop .goTopBtn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.goTop .goTopBtn .fa-arrow-alt-circle-up {
+  color: #C5946E;
+}
+
 @media (max-width: 768px) {
   .mdh6 {
     font-size: 1rem;

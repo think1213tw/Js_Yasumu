@@ -326,3 +326,11 @@ function toThousands(x) {
     parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     return parts.join(".");
 }
+
+document.querySelector('.jq-goTop').addEventListener('click',function(e){
+    e.preventDefault();
+    window.scroll({
+        top: 0,
+        behavior: "smooth"
+      });
+})
