@@ -137,7 +137,10 @@ function changeCartsNum(status, id) {
     }
     const url = `${baseUrl}/api/livejs/v1/customer/${apiPath}/carts`;
     axios.patch(url, newData).then(function (res) {
-        alert('修改成功')
+        Swal.fire(
+            '修改成功',
+            '',
+            'success')
         renderCartsList(res);
     }).catch(function (err) { console.log(err); })
 }
