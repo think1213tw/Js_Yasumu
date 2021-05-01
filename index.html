@@ -384,47 +384,51 @@
   </div>
   <!--我的購物車-->
   <h4 class="text-center text-light pb-4 pt-4">我的購物車</h4>
-  <div class="row justify-content-center mb-5">
-    <div class="col-10 col-lg-9 js-shoppingCart">
-      <div>
-        <div class="row d-none d-md-flex mb-3">
-          <div class="col-md-4 col-lg-5">品項</div>
-          <div class="col-md-2 col-lg-2">單價</div>
-          <div class="col-md-2 col-lg-2">數量</div>
-          <div class="col-md-4 col-lg-2">金額</div>
-          <div class="col-md-4 col-lg-1"></div>
+
+  <div class="container">
+    <div class="row justify-content-center mb-5">
+      <div class="col-10 col-lg-9 js-shoppingCart">
+        <div>
+          <div class="row d-none d-md-flex mb-3">
+            <div class="col-md-4 col-lg-5">品項</div>
+            <div class="col-md-2 col-lg-2">單價</div>
+            <div class="col-md-2 col-lg-2">數量</div>
+            <div class="col-md-4 col-lg-2">金額</div>
+            <div class="col-md-4 col-lg-1"></div>
+          </div>
+  
+          <ul class="row js-carts align-items-center border-bottom pb-3 mb-3 list-unstyled">
+            <!-- <li class="col-md-4 col-lg-5 d-flex flex-column flex-md-row align-items-md-center">
+                      <img width="80px" height="80px"  src="https://hexschool-api.s3.us-west-2.amazonaws.com/custom/tTQQggBAfhl0vEeM7WmTwij1JbAwC7MBD2TSyjHbZHvBjnLU5tOtoGszOmODOEu6DRjzdjIpcEzeCCkmRWaL8JDJwaaWglER7P3V4JXKT7FT5gm0UL45CaHpSVlEXbKK.png" class="cartImg mb-2 mr-md-3">
+                      <h6 ><span class="d-md-none">品名：</span>Antony 雙人床架／雙人加大</h6>
+                  </li>
+                  <li class="col-md-2 col-lg-2">
+                      <h6 ><span class="d-md-none">單價：</span>NT$12,000</h6>
+                  </li>
+                  <li class="col-md-2 col-lg-2">
+                      <div><span class="d-md-none">數量：</span>1</div>
+                  </li>
+                  <li class="col-10 col-md-2 col-lg-2 d-flex align-items-center justify-content-between">
+                      <h6class="h6"><span class="d-md-none">金額：</span>NT$12,000</h6>
+            
+                  </li>
+                  <li class="col-2 col-md-2 col-lg-1 d-flex align-items-center justify-content-between">        
+                    <a href="#" class="material-icons text-dark">
+                        close
+                    </a>
+                </li> -->
+          </ul>
         </div>
-
-        <ul class="row js-carts align-items-center border-bottom pb-3 mb-3 list-unstyled">
-          <!-- <li class="col-md-4 col-lg-5 d-flex flex-column flex-md-row align-items-md-center">
-                    <img width="80px" height="80px"  src="https://hexschool-api.s3.us-west-2.amazonaws.com/custom/tTQQggBAfhl0vEeM7WmTwij1JbAwC7MBD2TSyjHbZHvBjnLU5tOtoGszOmODOEu6DRjzdjIpcEzeCCkmRWaL8JDJwaaWglER7P3V4JXKT7FT5gm0UL45CaHpSVlEXbKK.png" class="cartImg mb-2 mr-md-3">
-                    <h6 ><span class="d-md-none">品名：</span>Antony 雙人床架／雙人加大</h6>
-                </li>
-                <li class="col-md-2 col-lg-2">
-                    <h6 ><span class="d-md-none">單價：</span>NT$12,000</h6>
-                </li>
-                <li class="col-md-2 col-lg-2">
-                    <div><span class="d-md-none">數量：</span>1</div>
-                </li>
-                <li class="col-10 col-md-2 col-lg-2 d-flex align-items-center justify-content-between">
-                    <h6class="h6"><span class="d-md-none">金額：</span>NT$12,000</h6>
-          
-                </li>
-                <li class="col-2 col-md-2 col-lg-1 d-flex align-items-center justify-content-between">        
-                  <a href="#" class="material-icons text-dark">
-                      close
-                  </a>
-              </li> -->
-        </ul>
-      </div>
-
-      <div class="d-flex align-items-center justify-content-between">
-        <a href="#" class="js-deleteCartAll btn btn-outline-primary text-nowrap">刪除所有品項</a>
-        <div
-          class="col-md-4 col-lg-3 d-flex flex-column flex-md-row align-items-end align-items-md-center justify-content-md-between pr-0">
-          總金額<span class="js-finalTotal h6 h5-lg">NT$0</span></div>
+  
+        <div class="d-flex align-items-center justify-content-between">
+          <a href="#" class="js-deleteCartAll btn btn-outline-primary text-nowrap">刪除所有品項</a>
+          <div
+            class="col-md-4 col-lg-3 d-flex flex-column flex-md-row align-items-end align-items-md-center justify-content-md-between pr-0">
+            總金額<span class="js-finalTotal h6 h5-lg">NT$0</span></div>
+        </div>
       </div>
     </div>
+
   </div>
   <!-- 填寫預訂資料 -->
   <div class="orderList bg-warning pb-4 border-bottom" id="order">
@@ -481,15 +485,14 @@
       </div>
     </div>
   </div>
+  <div class="goTop">
+    <a href="#" class="goTopBtn jq-goTop">
+      <i class="fas fa-arrow-alt-circle-up fa-3x"> <span class="material-icons">
+        navigation
+        </span></i>
+    </a>
+  </div>
 
-    <div class="goTop">
-      <a href="#" class="goTopBtn jq-goTop">
-        <i class="fas fa-arrow-alt-circle-up fa-3x"> <span class="material-icons">
-          navigation
-          </span></i>
-      </a>
-    </div>
- 
   <!-- 表尾 -->
   <div class="footer bg-success ">
     <div class="container pt-4">
