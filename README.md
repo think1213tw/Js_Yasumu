@@ -15,8 +15,13 @@ Delete-所有品項
 Patch-購物車做數量加減
 
 後台功能:https://think1213tw.github.io/Js_Yasumu/admin.html
+
 可切換圖表查看營收
+
 Get-訂單列表
+
 Put-訂單狀態
+
 Delete-單筆訂單
+
 Delete-全筆訂單
