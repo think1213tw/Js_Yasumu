@@ -10858,6 +10858,12 @@ button:focus {
   width: 30px;
 }
 
+@media (min-width: 780px) {
+  .h-740 {
+    height: 740px;
+  }
+}
+
 @media (max-width: 769px) {
   .mdh6 {
     font-size: 1rem;
@@ -10865,9 +10871,18 @@ button:focus {
   .p0 {
     padding: 0px;
   }
+  .h-460 {
+    height: 460px;
+  }
+  .p0 {
+    padding-left: 16px;
+  }
 }
 
 @media (max-width: 391px) {
+  .h-230 {
+    height: 230px;
+  }
   .cartImg {
     width: 100%;
     height: 100px;
@@ -10893,6 +10908,59 @@ button:focus {
   }
   .ml3 {
     margin-left: 1rem;
+  }
+}
+
+.ml16 {
+  color: #402d2d;
+  padding: 40px 0;
+  font-weight: 800;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  overflow: hidden;
+}
+
+.ml16 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+.loading {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #E1965C;
+  -webkit-animation-name: loading;
+          animation-name: loading;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+@-webkit-keyframes loading {
+  from {
+  }
+  to {
+  }
+  0% {
+    background: #E1965C;
+  }
+  100% {
+    background: #E1965C;
+  }
+}
+
+@keyframes loading {
+  from {
+  }
+  to {
+  }
+  0% {
+    background: #E1965C;
+  }
+  100% {
+    background: #E1965C;
   }
 }
 

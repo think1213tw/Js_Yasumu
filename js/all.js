@@ -24,20 +24,26 @@ function getProductList() {
         .catch(function (err) { console.log(err); })
 }
 //渲染產品列表
-function renderProductList() {
+function renderProductList(category) {
     let str = "";
+    let col ="col-lg-3";
     productList.forEach(function (item) {
-        str += combineProductHTMLItem(item);
+        if(category ===undefined || category ==="全部"){
+            str += combineProductHTMLItem(item,col);
+        }else if(category===item.category){
+            str += combineProductHTMLItem(item,col);
+        }
+        
     })
     Product.innerHTML = str;
 }
 //重複字串，整理成函式
-function combineProductHTMLItem(item) {
-    return `<li class="col-6 col-md-4 col-lg-3 mb-4 position-relative">
+function combineProductHTMLItem(item,col) {
+    return `<li class="col-6 col-md-4 ${col} mb-4 position-relative big">
     <div class="productTag bg-dark text-white py-2 px-4 position-absolute ">新品</div>
     <img
       src="${item.images}"
-      class="productImg">
+      class="productImg ">
     <a href="#" class="btn btn-dark rounded-0 w-100 mb-2 " data-add="add"  data-id="${item.id}">加入購物車</a>
     <h4 class="font-size-sm h6-md mb-md-2 font-weight-bold">${item.title}</h4>
     <del class=" h5 font-weight-bold">NT$${toThousands(item.origin_price)}</del>
@@ -47,17 +53,20 @@ function combineProductHTMLItem(item) {
 //產品篩選
 selectItem.addEventListener('change', function (e) {
     let category = e.target.value;
-    if (category === "全部") {
-        renderProductList();
-    } else {
-        let str = '';
-        productList.forEach(function (item) {
-            if (category == item.category) {
-                str += combineProductHTMLItem(item)
-            }
-            Product.innerHTML = str;
-        })
-    }
+    renderProductList(category)
+
+    // if (category === "全部") {
+    //     renderProductList();
+    // } else {
+    //     let str = '';
+        
+    //     productList.forEach(function (item) {
+    //         if (category == item.category) {
+    //             str += combineProductHTMLItem(item)
+    //         }
+    //         Product.innerHTML = str;
+    //     })
+    // }
 })
 //取得購物車列表
 function getCartsList() {
@@ -74,24 +83,24 @@ function renderCartsList(res) {
     let total = toThousands(res.data.finalTotal);
     document.querySelector('.js-finalTotal').innerHTML = `$${total}`
     cartsList.forEach(function (item) {
-        str += ` <li class="col-md-4 col-lg-5 d-flex flex-column flex-md-row align-items-md-center">
+        str += ` <li class=" col-lg-5 d-flex flex-column flex-md-column flex-lg-row  align-items-lg-center">
         <img width="80px" height="80px"  src="${item.product.images}" class="cartImg mb-2 mr-md-3">
-        <h6 ><span class="d-md-none">品名：</span>${item.product.title}</h6>
+        <h6 ><span class="d-lg-none">品名：</span>${item.product.title}</h6>
     </li>
-    <li class="col-md-2 col-lg-2">
-        <h6 ><span class="d-md-none">單價：</span>NT$${toThousands(item.product.price)}</h6>
+    <li class=" col-lg-2">
+        <h6 ><span class="d-lg-none">單價：</span>NT$${toThousands(item.product.price)}</h6>
     </li>
-    <li class="col-md-2 p-0 col-lg-2 h6 mb-0">
-          <span class="d-md-none p0 ">數量：</span>
+    <li class=" p-0 col-lg-2 h6 mb-0">
+          <span class="d-lg-none p0 ">數量：</span>
       ${item.quantity === 1 ? `<span class="pl0 material-icons remove material-icons btn text-secondary h5 pl-0 pt-2 disabled"  data-id="${item.id}">remove</span>
 ` : `<span class="pl0 material-icons remove material-icons btn text-secondary h5 pl-0 pt-2" data-id="${item.id}">remove</span>`}
       <input class="wid border-0" type="text" id="${item.id}" value="${item.quantity}" > 
       <span class="material-icons add material-icons btn text-secondary h5 pl-0 pt-2" data-id="${item.id}">add</span>
           </li>
-    <li class="col-10 col-md-2 col-lg-2 d-flex align-items-center justify-content-between">
-        <h6 class="h6"><span class="d-md-none">金額：</span>NT$${toThousands(item.quantity * item.product.price)}</h6>
+    <li class="col-10  col-lg-2 d-flex align-items-center justify-content-between">
+        <h6 class="h6"><span class="d-lg-none">金額：</span>NT$${toThousands(item.quantity * item.product.price)}</h6>
     </li>
-    <li class="col-2 col-md-1 col-lg-1 d-flex align-items-center justify-content-between">        
+    <li class="col-2  col-lg-1 d-flex align-items-center justify-content-between">        
       <a href="#" class=" nav-link material-icons text-dark" data-del="delete" data-id="${item.id}">
           close
       </a>
@@ -334,3 +343,48 @@ document.querySelector('.jq-goTop').addEventListener('click',function(e){
         behavior: "smooth"
       });
 })
+
+
+let hide =document.querySelector('.hide');
+function load(){
+   
+    setTimeout(function(){ 
+
+        hide.setAttribute('class',"d-block");
+        AOS.init({
+       
+            once: false
+        });
+    }, 1500);
+}
+load();
+
+let olo=document.querySelector('.loading');
+
+
+setTimeout(function(){ 
+    olo.remove(); 
+}, 1500); 
+
+//載入自動開始輪播
+$('.carousel').carousel()
+
+// Wrap every letter in a span 載入特效
+var textWrapper = document.querySelector('.ml16');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml16 .letter',
+    translateY: [-100,0],
+    easing: "easeOutExpo",
+    duration: 1400,
+    delay: (el, i) => 30 * i
+  }).add({
+    targets: '.ml16',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+
